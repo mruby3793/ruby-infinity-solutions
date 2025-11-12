@@ -1,0 +1,65 @@
+{
+  "routes": [
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "*.json",
+      "serve": "*.json",
+      "statusCode": 200
+    },
+    {
+      "route": "*.js",
+      "serve": "*.js",
+      "statusCode": 200
+    },
+    {
+      "route": "*.css",
+      "serve": "*.css",
+      "statusCode": 200
+    },
+    {
+      "route": "*.svg",
+      "serve": "*.svg",
+      "statusCode": 200
+    },
+    {
+      "route": "*.png",
+      "serve": "*.png",
+      "statusCode": 200
+    },
+    {
+      "route": "*.jpg",
+      "serve": "*.jpg",
+      "statusCode": 200
+    },
+    {
+      "route": "*.gif",
+      "serve": "*.gif",
+      "statusCode": 200
+    },
+    {
+      "route": "*.ico",
+      "serve": "*.ico",
+      "statusCode": 200
+    },
+    {
+      "route": "*.woff",
+      "serve": "*.woff",
+      "statusCode": 200
+    },
+    {
+      "route": "*.woff2",
+      "serve": "*.woff2",
+      "statusCode": 200
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "*.{css,svg,js,png,gif,ico,jpg,jpeg,woff,woff2}"
+    ]
+  }
+}
