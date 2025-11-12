@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Infinity Solutions - Business & Professional Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <span class="logo-icon">💎</span>
+                <h1 class="logo">Ruby Infinity Solutions</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Ruby Infinity Solutions</h1>
+            <p>Your Complete Solution for Business Growth & Professional Development</p>
+            <p class="tagline">Software • Career Advancement • Creative Services • Consulting</p>
+            <button class="cta-button" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+                Explore Our Services
+            </button>
+        </div>
+        <div class="hero-background"></div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="section-subtitle">Comprehensive solutions tailored to your needs</p>
+            
+            <!-- Service Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterServices('all')">All Services</button>
+                <button class="filter-btn" onclick="filterServices('software')">Software</button>
+                <button class="filter-btn" onclick="filterServices('career')">Career</button>
+                <button class="filter-btn" onclick="filterServices('creative')">Creative</button>
+                <button class="filter-btn" onclick="filterServices('consulting')">Consulting</button>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <!-- Software Services -->
+                <div class="service-card" data-category="software">
+                    <div class="service-icon">💻</div>
+                    <h3>Custom Software Development</h3>
+                    <p>Tailored software solutions designed to streamline your business operations and increase productivity.</p>
+                    <ul class="service-features">
+                        <li>Web Applications</li>
+                        <li>Mobile Apps</li>
+                        <li>Database Solutions</li>
+                        <li>System Integration</li>
+                    </ul>
+                    <button class="learn-more-btn" onclick="openModal('software-dev')">Learn More</button>
+                </div>
+
+                <div class="service-card" data-category="software">
+                    <div class="service-icon">🔧</div>
+                    <h3>IT Consulting & Support</h3>
+                    <p>Strategic technology guidance and ongoing technical support for your organization.</p>
+                    <ul class="service-features">
+                        <li>Tech Strategy</li>
+                        <li>System Optimization</li>
+                        <li>Troubleshooting</li>
+                        <li>Cloud Solutions</li>
+                    </ul>
+                    <button class="learn-more-btn" onclick="openModal('it-consulting')">Learn More</button>
+                </div>
+
+                <!-- Career Services -->
+                <div class="service-card" data-category="career">
+                    <div class="service-icon">📄</div>
+                    <h3>Resume & Cover Letter Review</h3>
+                    <p>Professional review and optimization of your resume and cover letter to impress employers.</p>
+                    <ul class="service-features">
+                        <li>ATS Optimization</li>
+                        <li>Content Refinement</li>
+                        <li>Format Enhancement</li>
+                        <li>Industry-Specific Tips</li>
+                    </ul>
+                    <button class="learn-more-btn" onclick="openModal('resume-review')">Learn More</button>
+                </div>
+
+                <div class="service-card" data-category="career">
+                    <div class="service-icon">🎯</div>
+                    <h3>Career Coaching & Advice</h3>
+                    <p>Personalized guidance to advance your career, change fields, or reach your professional goals.</p>
+                    <ul class="service-features">
+                        <li>Career Planning</li>
+                        <li>Goal Setting</li>
+                        <li>Skill Development</li>
+                        <li>Networking Strategies</li>
+                    </ul>
+                    <button class="learn-more-btn" onclick="openModal('career-coaching')">Learn More</button>
+                </div>
+
+                <div class="service-card" data-category="career">
+                    <div class="service-icon">🎤</div>
+                    <h3>Interview Preparation</h3>
+                    <p>Comprehensive interview coaching to help you prepare for and ace your next job interview.</p>
+                    <ul class="service-features">
+                        <li>Mock Interviews</li>
+                        <li>Question Preparation</li>
+                        <li>Behavioral Coaching</li>
+                        <li>Confidence Building</li>
+                    </ul>
+                    <button class="learn-more-btn" onclick="openModal('interview-prep')">Learn More</button>
+                </div>
+
+                <!-- Creative Services -->
+                <div class="service-card" data-category="creative">
+                    <div class="service-icon">🎨</div>
+                    <h3>Henna Art & Design</h3>
+                    <p>Beautiful, traditional henna artwork for special occasions, celebrations, and personal adornment.</p>
+                    <ul class="service-features">
+                        <li>Bridal Henna</li>
+                        <li>Event Coverage</li>
+                        <li>Custom Designs</li>
+                        <li>Party Services</li>
+                    </ul>
+                    <button class="learn-more-btn" onclick="openModal('henna-art')">Learn More</button>
+                </div>
+
+                <!-- Consulting & Document Services -->
+                <div class="service-card" data-category="consulting">
+                    <div class="service-icon">📋</div>
+                    <h3>Document Assistance</h3>
+                    <p>Expert help with critical documentation including medical, passport, and immigration applications.</p>
+                    <ul class="service-features">
+                        <li>Medical Documentation</li>
+                        <li>Passport Applications</li>
+                        <li>Green Card Support</li>
+                        <li>Visa Applications</li>
+                    </ul>
+                    <button class="learn-more-btn" onclick="openModal('document-assist')">Learn More</button>
+                </div>
+
+                <div class="service-card" data-category="consulting">
+                    <div class="service-icon">💼</div>
+                    <h3>Business Consulting</h3>
+                    <p>Strategic business guidance to help your company grow, optimize operations, and maximize profitability.</p>
+                    <ul class="service-features">
+                        <li>Business Strategy</li>
+                        <li>Operations Optimization</li>
+                        <li>Market Analysis</li>
+                        <li>Growth Planning</li>
+                    </ul>
+                    <button class="learn-more-btn" onclick="openModal('business-consulting')">Learn More</button>
+                </div>
+
+                <div class="service-card" data-category="consulting">
+                    <div class="service-icon">📚</div>
+                    <h3>General Consulting</h3>
+                    <p>Diverse consulting services tailored to your specific needs and organizational challenges.</p>
+                    <ul class="service-features">
+                        <li>Custom Solutions</li>
+                        <li>Expert Advice</li>
+                        <li>Implementation Support</li>
+                        <li>Change Management</li>
+                    </ul>
+                    <button class="learn-more-btn" onclick="openModal('general-consulting')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Ruby Infinity Solutions</h2>
+                    <p>Ruby Infinity Solutions is an LLC dedicated to providing comprehensive business and professional services. Our diverse team of experts brings years of experience across multiple disciplines, from software development to creative services.</p>
+                    <p>We believe in empowering individuals and businesses by offering tailored solutions that drive growth, success, and transformation. Whether you need cutting-edge technology, career guidance, or specialized services, we're here to help you achieve your goals.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Clients Served</p>
+                        </div>
+                        <div class="stat">
+                            <h3>20+</h3>
+                            <p>Service Categories</p>
+                        </div>
+                        <div class="stat">
+                            <h3>98%</h3>
+                            <p>Satisfaction Rate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">💎 Ruby Infinity Solutions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Ruby Infinity Solutions transformed our business with their custom software. Professional, reliable, and innovative!"</p>
+                    <p class="client-name">- Sarah Johnson, Tech Startup CEO</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"The resume review service was incredible. I landed my dream job within 2 weeks of updating my resume!"</p>
+                    <p class="client-name">- Michael Chen, Software Engineer</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"The henna artist's work was absolutely stunning. Highly recommended for weddings and special events!"</p>
+                    <p class="client-name">- Priya Patel, Wedding Planner</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Their document assistance made the immigration process so much easier. Thank you for your expertise and support!"</p>
+                    <p class="client-name">- Ahmed Rahman, Immigration Client</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"The interview coaching gave me the confidence I needed. I aced my interviews and got three offers!"</p>
+                    <p class="client-name">- Jessica Williams, Marketing Director</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Excellent business consulting. They helped us streamline operations and increase revenue by 35%."</p>
+                    <p class="client-name">- David Thompson, Business Owner</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Service Pricing</h2>
+            <p class="section-subtitle">Flexible packages to fit your budget</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <p class="price">$99</p>
+                    <p class="period">per service</p>
+                    <ul class="pricing-features">
+                        <li>✓ Single service consultation</li>
+                        <li>✓ Email support</li>
+                        <li>✓ Quick turnaround</li>
+                    </ul>
+                    <button class="pricing-btn">Get Started</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="badge">Most Popular</div>
+                    <h3>Professional</h3>
+                    <p class="price">$299</p>
+                    <p class="period">per package</p>
+                    <ul class="pricing-features">
+                        <li>✓ Multiple service hours</li>
+                        <li>✓ Phone & email support</li>
+                        <li>✓ Revision rounds</li>
+                        <li>✓ Priority scheduling</li>
+                    </ul>
+                    <button class="pricing-btn primary">Choose Plan</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <p class="price">Custom</p>
+                    <p class="period">tailored pricing</p>
+                    <ul class="pricing-features">
+                        <li>✓ Unlimited services</li>
+                        <li>✓ 24/7 support</li>
+                        <li>✓ Dedicated account manager</li>
+                        <li>✓ Custom solutions</li>
+                    </ul>
+                    <button class="pricing-btn">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-subtitle">Ready to transform your business or career? Contact us today!</p>
+            
+            <div class="contact-content">
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service of Interest *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service...</option>
+                                <option value="software">Software Development</option>
+                                <option value="it-consulting">IT Consulting</option>
+                                <option value="resume">Resume Review</option>
+                                <option value="career">Career Coaching</option>
+                                <option value="interview">Interview Prep</option>
+                                <option value="henna">Henna Art</option>
+                                <option value="documents">Document Assistance</option>
+                                <option value="business">Business Consulting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <span class="info-icon">📧</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:rubywoo718@gmail.com">rubywoo718@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-icon">⏰</span>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>24/7</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-icon">🌐</span>
+                        <div>
+                            <h4>Website</h4>
+                            <p>www.rubyinfinitysolutions.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Ruby Infinity Solutions</h4>
+                    <p>Your complete solution for business and professional growth.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Software Development</a></li>
+                        <li><a href="#services">Career Services</a></li>
+                        <li><a href="#services">Henna Art</a></li>
+                        <li><a href="#services">Consulting</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ruby Infinity Solutions LLC. All rights reserved.</p>
+                <p>Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Service Details -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
